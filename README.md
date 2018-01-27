@@ -16,3 +16,7 @@
 - Create a server to transfer information (back-end)
 - If possible, save the data to the database and find out which vocab people use the most in that month
 
+### Things to install :arrow_down:
+'''
+(sudo) pip3 install Flask
+'''
