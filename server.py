@@ -1,5 +1,9 @@
 #importing library for the server
 from flask import Flask 
+
+from matplotlib.backends.backend_agg import FigureCanvasAgg
+from matplotlib.figure import Figure
+
 app = Flask(__name__)
 
 @app.route("/")
