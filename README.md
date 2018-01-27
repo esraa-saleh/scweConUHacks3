@@ -18,5 +18,5 @@
 
 ### Things to install :arrow_down:
 ```
-(sudo) pip3 install Flask
+(sudo) pip3 install -r server_require.txt
 ```
