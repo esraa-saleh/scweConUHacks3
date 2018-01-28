@@ -1,6 +1,7 @@
-Flask==0.12.2
-matplotlib==2.1.2
-youtube-dl==2018.1.27
-PyDictionary==1.5.2
-watson-developer-cloud==1.0.2
 nltk==3.2.5
+numpy==1.14.0
+youtube_dl==2018.1.27
+Flask==0.12.2
+watson_developer_cloud==1.0.2
+matplotlib==2.1.2
+PyDictionary==1.5.2
