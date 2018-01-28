@@ -21,7 +21,7 @@ a 2D array (word, frequency)
 input : numpy array, 2D of words and freqs
 '''
 
-def savePlot(wordFreqDict):
+def savePlot(wordFreqDict, imageName):
 
     indexes = np.arange(len(wordFreqDict.keys()))
     ax = pl.subplot(111)
@@ -31,7 +31,7 @@ def savePlot(wordFreqDict):
 
     pl.ylabel("Frequency")
     pl.xlabel("Words")
-    pl.savefig('histogram.png')
+    pl.savefig(imageName)
 
 
 
