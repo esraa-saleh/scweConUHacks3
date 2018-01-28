@@ -1,6 +1,5 @@
 #importing library for the server
 from flask import Flask, flash, redirect, render_template, request, session, abort, url_for, Markup
-import os
 #importing youtube mp3 converter
 from mp3_youtube import *
 #importing analyze function
@@ -39,7 +38,6 @@ def youtube():
 		tag_value = ""
 		#if successfully download the mp3
 		if download_mp3(path):
-			os.remove("./static/output.png")
 			analysis_success, objDict = waveToFreqsDict(3, "/sound.mp3", "./temp")
 			if analysis_success:
 				print(objDict)
