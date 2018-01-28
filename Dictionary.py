@@ -8,5 +8,3 @@ def get_meaning(word):
         print("err")
     else:
         return dictionary.meaning(word)['Noun'][0]
-    
-print(get_meaning("derivative"))
