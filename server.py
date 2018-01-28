@@ -2,11 +2,13 @@
 from flask import Flask, flash, redirect, render_template, request, session, abort, url_for
 #importing youtube mp3 converter
 from mp3_youtube import *
+#importing analyze function
+from ibmWatson import *
 
 app = Flask(__name__, template_folder='html', static_url_path='/static')
 
 showing_image = "/static/histogram.png"
-testing_image = "/static/testing.png"
+success_image = "/static/output.png"
 failing_image = "/static/notfound.png"
 
 #getting the home page
@@ -21,10 +23,18 @@ def youtube():
 		path = request.form['url']
 		if "www.youtube.com" not in path:
 			path = "https://www.youtube.com/watch?v=" + path
-		print(path)
 
+		#if successfully download the mp3
 		if download_mp3(path):
-			sending_image = testing_image
+			analysis_success, objDict = waveToFreqsDict(5, "/sound.mp3", "./temp")
+			if analysis_success:
+				print(objDict)
+				getFreqPlot(objDict, "./static/output.png")
+				sending_image = success_image
+			else:
+				sending_image = failing_image
+
+		#if fail to download mp3
 		else:
 			sending_image = failing_image
 		

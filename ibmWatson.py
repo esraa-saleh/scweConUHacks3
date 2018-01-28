@@ -8,8 +8,6 @@ from nltk.corpus import stopwords
 outfile needs to be with extension .json
 
 '''
-OK = 1
-N_OK = -1
 
 def __transcribe__(fileWav,  dirPath=''):
     # bluemix authentication username
@@ -53,7 +51,7 @@ def __getWordsAndFreqs__(wordsStr, topN=2):
     counts = Counter(wordsNoStops)
 
     if (len(counts) < topN):
-        return N_OK, {}
+        return False, {}
 
     # counts is a dictionary of words mapped to their frequencies
     wAndF = counts.most_common(topN)
@@ -63,25 +61,29 @@ def __getWordsAndFreqs__(wordsStr, topN=2):
     for i in range(size):
         wordFreqDict[wAndF[i][0]] = wAndF[i][1]
 
-    return OK, wordFreqDict
-
+    return True, wordFreqDict
 
 
 def waveToFreqsDict(numWords, fileWavName, dirPath =''):
+    print("In function waveToFreqsDict")
     jsonResult = __transcribe__(fileWavName, dirPath)
     transcription = __jsonToTranscription__(jsonResult)
     sig, wordsFreqsDict = __getWordsAndFreqs__(transcription, topN=numWords)
+    print("Returnning info")
     return sig, wordsFreqsDict
 
-def getFreqPlot(wordsFreqsDict):
-    plotter.savePlot(wordsFreqsDict)
+
+def getFreqPlot(wordsFreqsDict, imageName):
+    print("In function getFreqPlot")
+    plotter.savePlot(wordsFreqsDict, imageName)
+    print("Finish getting freqplot")
 
 
 
-if __name__ == '__main__':
+#if __name__ == '__main__':
 
     # # Open audio file(.wav) in wave format
-    dirPath = '/Users/esraasaleh/PycharmProjects/scweAtConUHacks/scweConUHacks3/'
-    fileWav = 'test.mp3'
-    sig, myDict = waveToFreqsDict(numWords=5, fileWavName='beauty.mp3')
-    getFreqPlot(myDict)
+#    dirPath = '/Users/esraasaleh/PycharmProjects/scweAtConUHacks/scweConUHacks3/'
+#    fileWav = 'test.mp3'
+#    sig, myDict = waveToFreqsDict(numWords=5, fileWavName='beauty.mp3')
+#    getFreqPlot(myDict)

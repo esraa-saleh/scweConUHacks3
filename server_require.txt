@@ -2,3 +2,6 @@ Flask==0.12.2
 matplotlib==2.1.2
 youtube-dl==2018.1.27
 PyDictionary==1.5.2
+watson-developer-cloud==1.0.2
+nltk==3.2.5
+
