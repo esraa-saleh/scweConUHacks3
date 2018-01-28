@@ -3,6 +3,7 @@
   <head>
     <title>Words</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="index.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <script>
@@ -36,7 +37,7 @@
               <a class="navbar-brand" href="#">Common Words</a>
             </div>
             <form class="navbar-form navbar-left" action="/action_page.php">
-              <form>
+              <form id="idForm" name="nameForm">
                   <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search">
                     <div class="input-group-btn">
@@ -46,6 +47,24 @@
                     </div>
                   </div>
                 </form>
+                <!-- <script>
+                  $("#nameForm").submit(function(e) {
+
+                    var url = "/index"; // the script where you handle the form input.
+
+                    $.ajax({
+                          method: "POST",
+                          url: url,
+                          data: $("#nameForm").serialize(), // serializes the form's elements.
+                          success: function(data)
+                          {
+                              alert(data); // show response from the php script.
+                          }
+                        });
+
+                    e.preventDefault(); // avoid to execute the actual submit of the form.
+                    });
+                </script> -->
             </form>
           </div>
         </nav>
