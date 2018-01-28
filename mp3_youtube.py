@@ -10,16 +10,20 @@ def supported(url):
     return False
 
 def download_mp3(url):
-	ydl_opts = {
-	    'format': 'bestaudio/best',
+    ydl_opts = {
+        'format': 'bestaudio/best',
         'outtmpl': './temp/sound.%(ext)s',
-	    'postprocessors': [{
-	        'key': 'FFmpegExtractAudio',
-	        'preferredcodec': 'mp3',
-	        'preferredquality': '192',
-	    }],
-	}
-	with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-	    ydl.download([url])
+        'postprocessors': [{
+            'key': 'FFmpegExtractAudio',
+            'preferredcodec': 'mp3',
+            'preferredquality': '192',
+        }],
+    }
 
-	return supported(url)
+    if not supported(url):
+        return False
+
+    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+        ydl.download([url])
+    return True
+
