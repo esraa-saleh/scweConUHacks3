@@ -7,4 +7,6 @@ def get_meaning(word):
     if type(word) != str or len(word)==0:
         return "meaning not found"
     else:
-        return list(dictionary.meaning(word).values())[0][0]
+    	if dictionary.meaning(word) == None:
+    		return "meaning not found"
+    	return list(dictionary.meaning(word).values())[0][0]
