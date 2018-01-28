@@ -6,6 +6,9 @@
 - Cheldon Mahon
 - Esra'a Saleh
 
+### How to use :question:
+- Enter a YouTube URL inside text box and click the enter button. Then, wait until the server responds and get the result to the client side. The whole processes might take 30 seconds to few minutes, depends on the times of the video.
+
 ### Goal :trophy:
 - To assist ESL students or other second language students by analysisng youtube videoes and find out the most common vocabulary spoken there. This draws their attention to the words that are more important for the development of their vocabulary.
 
