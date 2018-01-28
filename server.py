@@ -8,10 +8,6 @@ from ibmWatson import *
 import random
 #importing dictioanry
 from Dictionary import *
-<<<<<<< HEAD
-
-=======
->>>>>>> walter_area
 
 app = Flask(__name__, template_folder='html', static_url_path='/static')
 
