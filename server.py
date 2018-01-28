@@ -14,10 +14,13 @@ def home():
 
 #getting the youtube link
 @app.route('/youtube', methods=['POST'])
-def getYoutube():
-	path = request.form['link']
-	if "www.youtube.com" not in path:
-		path = "https://www.youtube.com/watch?v="
+def youtube():
+	if request.method == 'POST':
+		print("ok")
+		return render_template("index.html", result="ok")
+	#path = request.form['link']
+	#if "www.youtube.com" not in path:
+	#	path = "https://www.youtube.com/watch?v="
 
 if __name__ == "__main__":
 	app.run(debug=True)

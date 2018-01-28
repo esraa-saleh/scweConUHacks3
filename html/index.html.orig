@@ -3,10 +3,31 @@
   <head>
     <title>Words</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- <script src="{{ url_for('home') }}"></script> -->
+    <script src="index.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<<<<<<< HEAD
+    <script>
+      $("#button1").click(function(e){
+        e.preventDefault();
+        $.ajax({
+          type: "POST",
+          url:"/",
+          data: {
+            id: $(this).val()
+          },
+          success: function(result){
+            alert('ok');
+          },
+          error: function(result){
+            alert('error');
+          }
+        })
+      });
+    </script>
+=======
     
+>>>>>>> front-end
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="../../assets/js/html5shiv.js"></script>
@@ -17,18 +38,38 @@
       <nav class="navbar navbar-inverse">
           <div class="container-fluid">
             <div class="navbar-header">
-              <a class="navbar-brand" href="#">Common Words {{result}} </a>
+              <a class="navbar-brand" href="#">Common Words</a>
             </div>
-              <form class="navbar-form navbar-left" action="{{ url_for('youtube') }}" id="idForm" method="post">
+            <form class="navbar-form navbar-left" action="/action_page.php">
+              <form id="idForm" name="nameForm">
                   <div class="input-group">
-                    <input type="text" id="link" name ="url" class="form-control" placeholder="Search">
+                    <input type="text" class="form-control" placeholder="Search">
                     <div class="input-group-btn">
-                      <button class="btn btn-default" id="button1" type="submit" value="val_1"> 
+                      <button class="btn btn-default" id="button1"type="submit" value="val_1"> 
                         <i class="glyphicon glyphicon-search"></i>
                       </button>
                     </div>
                   </div>
                 </form>
+                <!-- <script>
+                  $("#nameForm").submit(function(e) {
+
+                    var url = "/index"; // the script where you handle the form input.
+
+                    $.ajax({
+                          method: "POST",
+                          url: url,
+                          data: $("#nameForm").serialize(), // serializes the form's elements.
+                          success: function(data)
+                          {
+                              alert(data); // show response from the php script.
+                          }
+                        });
+
+                    e.preventDefault(); // avoid to execute the actual submit of the form.
+                    });
+                </script> -->
+            </form>
           </div>
         </nav>
         <p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Histogram_of_arrivals_per_minute.svg/1200px-Histogram_of_arrivals_per_minute.svg.png" alt="Logo"></p>
