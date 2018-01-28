@@ -7,6 +7,7 @@ app = Flask(__name__, template_folder='html', static_url_path='/static')
 
 showing_image = "/static/histogram.png"
 testing_image = "/static/testing.png"
+failing_image = "/static/notfound.png"
 
 #getting the home page
 @app.route('/', methods=['GET'])
@@ -22,9 +23,12 @@ def youtube():
 			path = "https://www.youtube.com/watch?v=" + path
 		print(path)
 
-		download_mp3(path)
+		if download_mp3(path) == NOT_OK:
+			sending_image = failing_image
+		else:
+			sending_image = testing_image
 		
-		return render_template("index.html", result=path, image=testing_image)
+		return render_template("index.html", result=path, image=sending_image)
 	#path = request.form['url']
 	#if "www.youtube.com" not in path:
 	#	path = "https://www.youtube.com/watch?v="
