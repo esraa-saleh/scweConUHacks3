@@ -5,6 +5,7 @@ dictionary=PyDictionary()
 
 def get_meaning(word):
 <<<<<<< HEAD
+<<<<<<< HEAD
     if type(word) != str or len(word)==0:
 =======
     print("Printing the word: ",word)
@@ -12,5 +13,9 @@ def get_meaning(word):
 >>>>>>> 6ef61e36ccd2e4e26bf4f14e4ce45995623cff25
         print("err")
 
+=======
+    if type(word) != str or len(word)==0:
+        return "meaning not found"
+>>>>>>> walter_area
     else:
         return list(dictionary.meaning(word).values())[0][0]

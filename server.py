@@ -8,9 +8,14 @@ from ibmWatson import *
 import random
 #importing dictioanry
 from Dictionary import *
+<<<<<<< HEAD
 
+=======
+>>>>>>> walter_area
 
 app = Flask(__name__, template_folder='html', static_url_path='/static')
+
+styles = ["success", "danger", "info", "warning", "active"]
 
 showing_image = "/static/histogram.png"
 success_image = "/static/output.png"
@@ -49,10 +54,15 @@ def youtube():
 				html_tag = ""
 				for i in range(len(objArray)):
 					meaning = get_meaning(objArray[i])
+<<<<<<< HEAD
 					html_tag += '<tr class="' + random.choice(styles) + '"><td>' + objArray[i] + '</td><td>'+meaning+'</td></tr>'
 				
 				tag_value = Markup(html_tag)
 
+=======
+					html_tag += '<tr class="' + random.choice(styles) + '"><td>' + objArray[i] + '</td><td>' + meaning + '</td></tr>'
+				tag_value = Markup(html_tag)
+>>>>>>> walter_area
 			else:
 				sending_image = failing_image
 
@@ -62,8 +72,11 @@ def youtube():
 		
 		return render_template("index.html", result=path, image=sending_image, words=tag_value)
 
+<<<<<<< HEAD
 
 #for not caching the images
+=======
+>>>>>>> walter_area
 @app.after_request
 def add_header(response):
     """
@@ -73,6 +86,10 @@ def add_header(response):
     response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
     response.headers['Cache-Control'] = 'public, max-age=0'
     return response
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> walter_area
 
 if __name__ == "__main__":
 	app.run(debug=True)
