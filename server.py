@@ -23,10 +23,10 @@ def youtube():
 			path = "https://www.youtube.com/watch?v=" + path
 		print(path)
 
-		if download_mp3(path) == NOT_OK:
-			sending_image = failing_image
-		else:
+		if download_mp3(path):
 			sending_image = testing_image
+		else:
+			sending_image = failing_image
 		
 		return render_template("index.html", result=path, image=sending_image)
 	#path = request.form['url']
