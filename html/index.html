@@ -17,9 +17,9 @@
       <nav class="navbar navbar-inverse">
           <div class="container-fluid">
             <div class="navbar-header">
-              <a class="navbar-brand" href="#">Common Words {{result}} </a>
+              <a class="navbar-brand" href="#">Common Words</a>
             </div>
-              <form class="navbar-form navbar-left" action="{{ url_for('youtube') }}" id="idForm" method="post">
+              <form class="navbar-form navbar-left" action="{{ url_for('home') }}" id="idForm" method="post">
                   <div class="input-group">
                     <input type="text" id="link" name ="url" class="form-control" placeholder="Search">
                     <div class="input-group-btn">
@@ -29,6 +29,8 @@
                     </div>
                   </div>
                 </form>
+            }
+            }
           </div>
         </nav>
         <p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Histogram_of_arrivals_per_minute.svg/1200px-Histogram_of_arrivals_per_minute.svg.png" alt="Logo"></p>
@@ -39,7 +41,7 @@
                 <tr>
                   <th>Word</th>
                   
-                  <th>Definition</th>
+                  <th>Definition {{result}}</th>
                 </tr>
               </thead>
               <tbody>
