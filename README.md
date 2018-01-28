@@ -33,5 +33,5 @@ python3 server.py
 
 - Convert youtube to mp3
 ```
-python3 youtube_mp3.py
+python3 mp3_youtube.py
 ```

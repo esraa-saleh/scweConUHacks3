@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo cp ffmpeg /usr/local/bin
-sudo chmod +x /usr/local/bin/ffmpeg
+brew install libav
+brew link --overwrite python3
 
 pip3 install -r server_require.txt
