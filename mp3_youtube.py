@@ -7,6 +7,7 @@ NOT_OK = 998
 def download_mp3(url):
 	ydl_opts = {
 	    'format': 'bestaudio/best',
+        'outtmpl': './temp/sound.%(ext)s',
 	    'postprocessors': [{
 	        'key': 'FFmpegExtractAudio',
 	        'preferredcodec': 'mp3',
