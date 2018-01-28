@@ -50,8 +50,8 @@ def youtube():
 
 				html_tag = ""
 				for i in range(len(objArray)):
-					#meaning = get_meaning(objArray[i])
-					html_tag += '<tr class="' + random.choice(styles) + '"><td>' + objArray[i] + '</td><td>meaning</td></tr>'
+					meaning = get_meaning(objArray[i])
+					html_tag += '<tr class="' + random.choice(styles) + '"><td>' + objArray[i] + '</td><td>'+meaning+'</td></tr>'
 				
 				tag_value = Markup(html_tag)
 

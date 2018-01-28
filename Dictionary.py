@@ -7,4 +7,4 @@ def get_meaning(word):
     if type(word) != str:
         print("err")
     else:
-        return dictionary.meaning(word)['Noun'][0]
+        return list(dictionary.meaning(word).values())[0][0]
