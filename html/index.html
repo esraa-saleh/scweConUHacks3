@@ -2,9 +2,27 @@
 <html>
   <head>
     <title>Words</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
-
+    <script>
+      $("button").click(function(e){
+        e.preventDefault();
+        $.ajax({
+          type: "POST",
+          url:"/youtube",
+          data: {
+            id: $(this).val()
+          },
+          success: function(result){
+            alert('ok');
+          },
+          error: function(result){
+            alert('error');
+          }
+        })
+      });
+    </script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="../../assets/js/html5shiv.js"></script>
@@ -22,7 +40,7 @@
                   <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search">
                     <div class="input-group-btn">
-                      <button class="btn btn-default" type="submit">
+                      <button class="btn btn-default" type="submit" value="val_1"> 
                         <i class="glyphicon glyphicon-search"></i>
                       </button>
                     </div>
