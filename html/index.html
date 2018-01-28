@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bootstrap Template</title>
+    <title>Words</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
 
@@ -12,13 +12,64 @@
     <![endif]-->
   </head>
   <body>
-    <div class ="container">
-      <h1>Common Words Application</h1>
-      <form class="form-inline">
-          <label for="inputLink">Enter YouTube Link:</label>
-          <input type="email" class="form-control" id="inputLink" aria-describedby="LinkHelp" placeholder="Enter Link">    
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
+      <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Common Words</a>
+            </div>
+            <form class="navbar-form navbar-left" action="/action_page.php">
+              <form>
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-btn">
+                      <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+            </form>
+          </div>
+        </nav>
+        <p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Histogram_of_arrivals_per_minute.svg/1200px-Histogram_of_arrivals_per_minute.svg.png" alt="Logo"></p>
+        <div class="container">
+            <h2>Common Word Definitions</h2>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Word</th>
+                  
+                  <th>Definition</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Derivative</td>
+                  
+                  <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, non reiciendis? Totam eligendi dignissimos dolorum quia assumenda, quos quas et in quibusdam similique error sit vero reprehenderit amet obcaecati nesciunt?</td>
+                </tr>      
+                <tr class="success">
+                  <td>Success</td>
+                  
+                  <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, non reiciendis? Totam eligendi dignissimos dolorum quia assumenda, quos quas et in quibusdam similique error sit vero reprehenderit amet obcaecati nesciunt?</td>                </tr>
+                <tr class="danger">
+                  <td>Danger</td>
+                  
+                  <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, non reiciendis? Totam eligendi dignissimos dolorum quia assumenda, quos quas et in quibusdam similique error sit vero reprehenderit amet obcaecati nesciunt?</td>                </tr>
+                <tr class="info">
+                  <td>Info</td>
+                  
+                  <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, non reiciendis? Totam eligendi dignissimos dolorum quia assumenda, quos quas et in quibusdam similique error sit vero reprehenderit amet obcaecati nesciunt?</td>                </tr>
+                <tr class="warning">
+                  <td>Warning</td>
+                  
+                  <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, non reiciendis? Totam eligendi dignissimos dolorum quia assumenda, quos quas et in quibusdam similique error sit vero reprehenderit amet obcaecati nesciunt?</td>                </tr>
+                <tr class="active">
+                  <td>Active</td>
+                  
+                  <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, non reiciendis? Totam eligendi dignissimos dolorum quia assumenda, quos quas et in quibusdam similique error sit vero reprehenderit amet obcaecati nesciunt?</td>                </tr>
+              </tbody>
+            </table>
+          </div>
   </body>
 </html>
