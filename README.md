@@ -17,6 +17,21 @@
 - If possible, save the data to the database and find out which vocab people use the most in that month
 
 ### Things to install :arrow_down:
+- Install things for this repo:
 ```
-(sudo) pip3 install -r server_require.txt
+./install.sh
+```
+- If not work, try this first:
+```
+sudo chmod +x install.sh
+```
+
+- Start the server
+```
+python3 server.py
+```
+
+- Convert youtube to mp3
+```
+python3 youtube_mp3.py
 ```

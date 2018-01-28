@@ -1,4 +1,3 @@
-
 #importing library for the server
 from flask import Flask 
 import os
@@ -17,4 +16,4 @@ def home():
 	return render_template('index.html')
 
 if __name__ == "__main__":
-	app.run()
+	app.run(debug=True)
